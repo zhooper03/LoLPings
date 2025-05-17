@@ -44,7 +44,6 @@ namespace LoLPings
         private static void LoadAssets()
         {
             AssetBundle lolPingsAssetBundle = LoadAssetBundle("");
-            
         }
 
         public static AssetBundle LoadAssetBundle(string name)
