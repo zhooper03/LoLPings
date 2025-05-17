@@ -1,8 +1,10 @@
-﻿using BepInEx;
+﻿using System.IO;
+using System.Reflection;
+using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
+using REPOLib.Modules;
 using UnityEngine;
-using REPOLib;
 
 namespace LoLPings
 {
@@ -39,9 +41,27 @@ namespace LoLPings
             Harmony?.UnpatchSelf();
         }
 
+        private static void LoadAssets()
+        {
+            AssetBundle lolPingsAssetBundle = LoadAssetBundle("");
+            
+        }
+
+        public static AssetBundle LoadAssetBundle(string name)
+        {
+            Logger.LogDebug("Loasing Asset Bundle: " + name);
+            AssetBundle bundle = null;
+
+            return bundle;
+        }
+
         private void Update()
         {
             // Code that runs every frame goes here
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Logger.LogInfo("G key was pressed.");
+            }
         }
     }
 }
